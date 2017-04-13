@@ -1,8 +1,7 @@
 # bookstore.js
 
-                 book: bookInstance,
-                 copies: copies
-             };
+      
+                
              this._booksAvailable.push(bookCopies);
              console.log("Added " + copies + " copies of a new book: " + bookInstance);
         }
