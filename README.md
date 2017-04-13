@@ -1,43 +1,5 @@
 # bookstore.js
 
-var listOfAllKnownAuthors = []
-
-class BookStore
-{
-    constructor(name, address, owner)
-    {
-        this._name = name;
-        this._address = address;
-        this._owner = owner;
-        this._booksAvailable = [];
-        this._totalCopiesOfAllBooks = 0
-    }
-
-    authorKnown(authorName)
-    {
-        var foundThem = false;
-        for (var pos = 0; pos < listOfAllKnownAuthors.length; pos++)
-        {
-            if (authorName === listOfAllKnownAuthors[pos])
-            {
-                foundThem = true
-            }
-        }
-        return foundThem
-    }
-
-    addBook(bookInstance, copies)
-    {
-        var positionOfBook = this.checkForBook(bookInstance);
-        if (positionOfBook != null)
-        {
-             this._booksAvailable[positionOfBook].copies += copies;
-             console.log("Added " + copies + " copies of " + bookInstance);
-             listOfAllKnownAuthors.push(bookInstance.author);
-        }
-        else
-        {
-             var bookCopies = {
                  book: bookInstance,
                  copies: copies
              };
